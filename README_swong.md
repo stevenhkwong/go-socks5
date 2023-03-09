@@ -13,29 +13,35 @@ To use the example code change it in
     _example/main.go
 
 
-START
-=====
+START:
+======
 To start:
 go run _example/main.go 
 
-TEST with:
-==========
-
+TESTINGS:
+=========
 
 Test with nc
 ------------
-start a nc listener on wong-gate-2:
-nc -kl 4444
-hit it thru the socks proxy:
-nc --proxy-type socks5 --proxy localhost:10800 wong-gate-2.home 4444
+    start a nc listener on wong-gate-2:
+    nc -kl 4444
+    hit it thru the socks proxy:
+    nc --proxy-type socks5 --proxy localhost:10800 wong-gate-2.home 4444
+
+    --- tested and Works!
 
 Test with ssh
 -------------
+    ssh -o ProxyCommand='nc --proxy-type socks5 --proxy localhost:10800 %h %p' wong-gate-2.home
+
+    --- tested and Works!
+
+
+Test https
+----------
+    This works so does it mean it is accepting CONNECT ?
+    curl -k -v -socks5 localhost:10800 https://www.wongsrus.net
+    --- tested and Works!
 
 
 
-Test http
----------
-This works so does it mean it is accepting CONNECT ?
------------------------------------------------------
-curl -k -v -socks5 localhost:10800 https://www.wongsrus.net
