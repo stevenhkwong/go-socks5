@@ -1,0 +1,15 @@
+This repo is WIP 
+
+Date: 10/3/2023
+
+Things to do:
+
+
+Download some library into workspace. -- forgot how to do it.
+ -- see my go/balancer project
+
+Find out how to increase logging level
+Find out how to make proxy accepc CONNECT call as well.
+
+
+
